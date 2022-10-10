@@ -1,12 +1,9 @@
 steps:
-  - name: gcr.io/kaniko-project/executor:v1.6.0-debug
+  - name: gcr.io/cloud-builders/docker
     args:
-      - -f
-      - Dockerfile
-      - --destination
+      - build
+      - -t
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
-      - --context=dir:///stable-diffusion
-      - --cache=true
     dir: stable-diffusion
   - name: google/cloud-sdk:latest
     entrypoint: python
@@ -18,4 +15,5 @@ steps:
 timeout: 3600s
 options:
   logging: CLOUD_LOGGING_ONLY
-# test
+images: 
+- gcr.io/$PROJECT_ID/stable-diffusion:latest 
