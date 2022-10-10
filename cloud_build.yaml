@@ -13,3 +13,4 @@ steps:
       - --image-uri 
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
 timeout: 3600s
+# test
