@@ -2,9 +2,10 @@ steps:
   - name: gcr.io/kaniko-project/executor:v1.6.0-debug
     args:
       - -f
-      - stable-diffusion/Dockerfile
+      - Dockerfile
       - --destination
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
+      - --context=dir:///stable-diffusion/
       - --cache=true
   - name: google/cloud-sdk:latest
     entrypoint: python
