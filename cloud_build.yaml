@@ -2,14 +2,14 @@ steps:
   - name: gcr.io/kaniko-project/executor:v1.6.0-debug
     args:
       - -f
-      - Dockerfile
+      - stable-diffusion/Dockerfile
       - --destination
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
       - --cache=true
   - name: google/cloud-sdk:latest
     entrypoint: python
     args: 
-      - gcp_deploy.py 
+      - stable-diffusion/gcp_deploy.py 
       - --image-uri 
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
 timeout: 3600s
