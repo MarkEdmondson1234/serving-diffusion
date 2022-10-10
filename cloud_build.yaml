@@ -5,8 +5,8 @@ steps:
       - Dockerfile
       - --destination
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
+      - --context=dir:///stable-diffusion
       - --cache=true
-    dir: stable-diffusion
   - name: google/cloud-sdk:latest
     entrypoint: python
     args: 
