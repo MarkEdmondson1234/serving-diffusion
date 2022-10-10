@@ -13,4 +13,6 @@ steps:
       - --image-uri 
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
 timeout: 3600s
+options:
+  logging: CLOUD_LOGGING_ONLY
 # test
