@@ -6,7 +6,7 @@ steps:
       - --destination
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
       - --cache=true
-    dr: stable-diffusion
+    dir: stable-diffusion
   - name: google/cloud-sdk:latest
     entrypoint: python
     args: 
