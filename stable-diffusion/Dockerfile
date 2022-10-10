@@ -40,8 +40,6 @@ RUN . /root/.bashrc && \
     pip install uvicorn fastapi
 
 RUN ls -la
-WORKDIR "/"
-RUN ls -la
 COPY app/load_weights.py .
 COPY load_weights.sh .
 RUN ["./load_weights.sh"]
