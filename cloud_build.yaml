@@ -5,14 +5,15 @@ steps:
       - Dockerfile
       - --destination
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
-      - --context=dir:///stable-diffusion/
       - --cache=true
+    dr: stable-diffusion
   - name: google/cloud-sdk:latest
     entrypoint: python
     args: 
-      - stable-diffusion/gcp_deploy.py 
+      - gcp_deploy.py 
       - --image-uri 
       - gcr.io/$PROJECT_ID/stable-diffusion:latest
+    dir: stable-diffusion
 timeout: 3600s
 options:
   logging: CLOUD_LOGGING_ONLY
