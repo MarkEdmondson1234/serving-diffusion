@@ -8,5 +8,8 @@ steps:
       - --cache=true
   - name: google/cloud-sdk:latest
     entrypoint: python
-    args: gcp_deploy.py --image-uri gcr.io/$PROJECT_ID/stable-diffusion:latest
+    args: 
+      - gcp_deploy.py 
+      - --image-uri 
+      - gcr.io/$PROJECT_ID/stable-diffusion:latest
 timeout: 3600s
