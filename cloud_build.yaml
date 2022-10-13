@@ -4,14 +4,14 @@ steps:
       - build
       - .
       - -t
-      - gcr.io/$PROJECT_ID/stable-diffusion:latest
+      - eu.gcr.io/$PROJECT_ID/stable-diffusion:latest
     dir: stable-diffusion
   - name: google/cloud-sdk:latest
     entrypoint: python
     args: 
       - gcp_deploy.py 
       - --image-uri 
-      - gcr.io/$PROJECT_ID/stable-diffusion:latest
+      - eu.gcr.io/$PROJECT_ID/stable-diffusion:latest
     dir: stable-diffusion
 timeout: 3600s
 options:
@@ -19,4 +19,4 @@ options:
   machineType: 'N1_HIGHCPU_32'
   diskSizeGb: 500
 images: 
-- gcr.io/$PROJECT_ID/stable-diffusion:latest 
+- eu.gcr.io/$PROJECT_ID/stable-diffusion:latest 
