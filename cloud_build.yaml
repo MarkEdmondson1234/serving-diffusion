@@ -16,6 +16,7 @@ steps:
 timeout: 3600s
 options:
   logging: CLOUD_LOGGING_ONLY
-  machineType: 'N1_HIGHCPU_8'
+  machineType: 'N1_HIGHCPU_32'
+  diskSizeGb: 500
 images: 
 - gcr.io/$PROJECT_ID/stable-diffusion:latest 
