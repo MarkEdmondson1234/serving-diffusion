@@ -5,7 +5,8 @@ steps:
       - .
       - -t
       - $_ART_LOC
-      - '--cache-from', '$_ART_LOC'
+      - '--cache-from' 
+      - '$_ART_LOC'
     dir: stable-diffusion
 timeout: 3600s
 options:
