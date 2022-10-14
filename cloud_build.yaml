@@ -6,13 +6,6 @@ steps:
       - -t
       - eu.gcr.io/$PROJECT_ID/stable-diffusion:latest
     dir: stable-diffusion
-  - name: google/cloud-sdk:latest
-    entrypoint: python
-    args: 
-      - gcp_deploy.py 
-      - --image-uri 
-      - eu.gcr.io/$PROJECT_ID/stable-diffusion:latest
-    dir: stable-diffusion
 timeout: 3600s
 options:
   logging: CLOUD_LOGGING_ONLY
