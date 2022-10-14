@@ -17,4 +17,4 @@ options:
 images: 
 - $_ART_LOC
 substitutions:
-  _ART_LOC: europe.pkg.dev/${PROJECT_ID}/stable-diffusion:latest
+  _ART_LOC: europe.pkg.dev/${PROJECT_ID}/stable-diffusion/serving-diffusion:latest
