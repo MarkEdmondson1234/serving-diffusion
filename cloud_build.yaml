@@ -4,12 +4,16 @@ steps:
       - build
       - .
       - -t
-      - eu.gcr.io/$PROJECT_ID/stable-diffusion:latest
+      - $_ART_LOC
+      - '--cache-from', '$_ART_LOC'
     dir: stable-diffusion
 timeout: 3600s
 options:
   logging: CLOUD_LOGGING_ONLY
   machineType: 'N1_HIGHCPU_32'
   diskSizeGb: 500
+  dynamic_substitutions: true
 images: 
-- eu.gcr.io/$PROJECT_ID/stable-diffusion:latest 
+- $_ART_LOC
+substitutions:
+  _ART_LOC: eu.pkg.dev/${PROJECT_ID}/stable-diffusion:latest
